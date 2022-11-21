@@ -85,7 +85,7 @@ public class User{
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof User)) return false;
-        User shop = (Usuario) obj;
+        User shop = (User) obj;
         return this.user.equalsIgnoreCase(shop.getUser());
     }
     
