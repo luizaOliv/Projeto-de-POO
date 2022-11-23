@@ -1,6 +1,6 @@
 package Classes;
 
-import Interface.InterfaceVet;
+import Interfaces.InterfaceVet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
