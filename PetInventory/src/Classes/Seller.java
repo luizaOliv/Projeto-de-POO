@@ -1,6 +1,6 @@
 package Classes;
 
-import Interface.InterfaceSeller;
+import Interfaces.InterfaceSeller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
