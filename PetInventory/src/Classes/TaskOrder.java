@@ -54,7 +54,7 @@ public class TaskOrder {
         this.data = data;
     }
        
-    public void setObservation(String observation{
+    public void setObservation(String observation){
         this.observation = observation;
     }
     
