@@ -124,7 +124,7 @@ public class PetInventory {
 
     public boolean login(String user, String password) {
         for (User item : this.users) {
-            if (item.getUser().equals(user) && item.getSenha().equals(password)) {
+            if (item.getUser().equals(user) && item.getPassword().equals(password)) {
                 this.currentLogin = item;
 
                 switch (item.getRole()) {
