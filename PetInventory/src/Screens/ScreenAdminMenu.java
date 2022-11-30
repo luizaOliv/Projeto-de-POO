@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class ScreenAdminMenu extends javax.swing.JFrame {
 
-    PetInventory petshop;
+    PetInventory petInventory;
     /**
      * Creates new form ScreenAdminMenu
      */
