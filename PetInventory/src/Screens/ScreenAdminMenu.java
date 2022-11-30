@@ -2,8 +2,7 @@ package Screens;
 
 import Classes.Lib;
 import Classes.PetInventory;
-import Classes.PetShop;
-import Classes.Produto;
+import Classes.Product;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
