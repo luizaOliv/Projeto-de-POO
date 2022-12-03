@@ -260,68 +260,68 @@ public class ScreenAdminMenu extends javax.swing.JFrame {
     }
 
     private void jButtonGenerateReportsActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenReports(petInventory));         
+        petInventory.next(new ScreenReports(petInventory));         
     }
 
     private void jButtonPayBillActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenPayBill(petInventory));   
+        petInventory.next(new ScreenPayBill(petInventory));   
     }
 
     private void jButtonResetStockActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenResetStock(petInventory)); 
+        petInventory.next(new ScreenResetStock(petInventory)); 
     }
 
     private void jButtonRegisterTreatmentActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenRegisterTreatment(petInventory)); 
+        petInventory.next(new ScreenRegisterTreatment(petInventory)); 
     }
 
     private void jButtonListTaskOrderActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenListTaskOrder(petInventory)); 
+        petInventory.next(new ScreenListTaskOrder(petInventory)); 
     }
 
     private void jButtonListClientsActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenListClients(petInventory)); 
+        petInventory.next(new ScreenListClients(petInventory)); 
     }
 
     private void jButtonListRoleActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenListRole(petInventory)); 
+        petInventory.next(new ScreenListRole(petInventory)); 
     }
 
     private void jButtonSellTaskActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenSellTask(petInventory)); 
+        petInventory.next(new ScreenSellTask(petInventory)); 
     }
 
     private void jButtonSellProductActionPerformed(java.awt.event.ActionEvent evt) {
         ArrayList<Product> shoppingBag = new ArrayList<>();
-        petInventory.Next(new ScreenSellProduct(petInventory, shoppingBag)); 
+        petInventory.next(new ScreenSellProduct(petInventory, shoppingBag)); 
     }
 
     private void jButtonNewTaskActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenNewTask(petInventory)); 
+        petInventory.next(new ScreenNewTask(petInventory)); 
     }
 
     private void jButtonNewProductActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenNewProduct(petInventory)); 
+        petInventory.next(new ScreenNewProduct(petInventory)); 
     }
 
     private void jButtonNewVetActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenNewRole(petInventory)); 
+        petInventory.next(new ScreenNewRole(petInventory)); 
     }
 
     private void jButtonNewSellerActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new SreenNewRole(petInventory)); 
+        petInventory.next(new SreenNewRole(petInventory)); 
     }
 
     private void jButtonNewClientActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenNewClient(petInventory, false)); 
+        petInventory.next(new ScreenNewClient(petInventory, false)); 
     }
 
     private void jButtonListProductActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenListProduct(petInventory)); 
+        petInventory.next(new ScreenListProduct(petInventory)); 
     }
 
     private void jButtonSearchTaskActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.Next(new ScreenSearchTask(petInventory)); 
+        petInventory.next(new ScreenSearchTask(petInventory)); 
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
