@@ -1,8 +1,5 @@
 package Classes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class User{
     /* attributes that will be used */
     protected PetInventory petInventory;
@@ -67,7 +64,7 @@ public class User{
     /* method responsible for search a registration of a given customer */
     public Client searchRegistration(Integer cpf){
         //go through the vector of customers containing in the petInventory
-        for(Client clients : petInventory.getClients()){
+        for(Client clients : petInventory.getClient()){
             //performs the comparison through the cpf. if true, returns the client. if false, it returns null.
             if(clients.getCpf() == cpf){
                 return clients;

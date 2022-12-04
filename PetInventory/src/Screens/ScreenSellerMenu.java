@@ -39,21 +39,21 @@ public class ScreenSellerMenu extends javax.swing.JFrame {
         jButtonNewClient.setText("New Client");
         jButtonNewClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNewClientActionPerformed(evt);
+                //jButtonNewClientActionPerformed(evt);
             }
         });
 
         jButtonSellProduct.setText("Sell Product");
         jButtonSellProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSellProductActionPerformed(evt);
+              //  jButtonSellProductActionPerformed(evt);
             }
         });
 
         jButtonSellTask.setText("Sell Task");
         jButtonSellTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSellTaskActionPerformed(evt);
+                //jButtonSellTaskActionPerformed(evt);
             }
         });
 
@@ -114,17 +114,17 @@ public class ScreenSellerMenu extends javax.swing.JFrame {
     }
 
     private void jButtonNewClientActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.irPara(new ScreenNewClient(petInventory, false)); 
+        petInventory.goFor(new ScreenRegisterClient(petInventory, false)); 
     }
 
-    private void jButtonSellProductActionPerformed(java.awt.event.ActionEvent evt) {
-        ArrayList<Produto> carrinho = new ArrayList<>();
-        petInventory.next(new ScreenSellProduct(petInventory, carrinho)); 
-    }
+   // private void jButtonSellProductActionPerformed(java.awt.event.ActionEvent evt) {
+     //   ArrayList<Product> carrinho = new ArrayList<>();
+       // petInventory.next(new ScreenSellProduct(petInventory, carrinho)); 
+   // }
 
-    private void jButtonSellTaskActionPerformed(java.awt.event.ActionEvent evt) {
-        petInventory.next(new ScreenSellTask(petInventory)); 
-    }
+    //private void jButtonSellTaskActionPerformed(java.awt.event.ActionEvent evt) {
+     //   petInventory.next(new ScreenSellTask(petInventory)); 
+    //}
           
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -135,4 +135,4 @@ public class ScreenSellerMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
-}
+

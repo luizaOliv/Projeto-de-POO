@@ -17,6 +17,8 @@ public class Task {
     
     /* getters and setters*/
 
+    public Task(String name2, double price2, long id2) {
+    }
     public String getName() {
         return name;
     }

@@ -9,7 +9,7 @@ public class Lib {
  * Conduct manual tests to verify functionality
  * @return petInventory - PetInventory with test values
  */
-    public static PetInventory testesManuais(){
+    public static PetInventory tests(){
         PetInventory petInventory = new PetInventory("Puppy cat");
         Admin admin = new Admin(petInventory, "Lore", "admin", "admin", 5000.0);
         Vet vet = new Vet(petInventory, "Alice", "vet", "vet", 3000.0);
