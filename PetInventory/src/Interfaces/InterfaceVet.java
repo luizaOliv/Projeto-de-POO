@@ -1,14 +1,20 @@
 package Interfaces;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import Classes.Client;
+import Classes.PetInventory;
+import Classes.TaskOrder;
+
 public interface InterfaceVet {
 
     //method that registers treatment
-    default boolean registrarTratamento(PetInventory petInventory, TaskOrders order, String treatment) {
+    default boolean registerTreatment(PetInventory petInventory, TaskOrder order, String treatment) {
         if(order == null) return false;
         boolean success = false;
-        Iterator<TaskOrders> itr = petInventory.getTaskOrders().iterator();
+        Iterator<TaskOrder> itr = petInventory.getTaskOrder().iterator();
         while (itr.hasNext()) {
-            TaskOrders obj = itr.next();
+            TaskOrder obj = itr.next();
             //remove this task order from the task order vector
             if (obj.getId() == order.getId()) {
                 itr.remove();
@@ -17,19 +23,19 @@ public interface InterfaceVet {
         }        
         if (success) {
         //add note to order
-            order.setNote(treatment);
+            order.setObservation(treatment);
             //add this order to the history vector
-            petInventory.getTaskHistory().add(order);
+           // petInventory.getTaskHistory().add(order);
         }
         return success;
     }
 
     //method that allows the search for a task order
-    default TaskOrders searchTaskOrders(PetInventory petInventory, long id) {
+    default TaskOrder searchTaskOrders(PetInventory petInventory, long id) {
         //receive task orders
-        Iterator<TaskOrders> itr = petInventory.getTaskOrders().iterator();
+        Iterator<TaskOrder> itr = petInventory.getTaskOrder().iterator();
         while (itr.hasNext()) {
-            TaskOrders obj = itr.next();
+            TaskOrder obj = itr.next();
             //check id to identify if searched order exists
             if (obj.getId() == id) {
                 //returns the order found
@@ -42,15 +48,15 @@ public interface InterfaceVet {
      //method to list clients
      default void listClient(PetInventory petInventory) {
         //traverses the vector that stores all clients
-        for (Client client : petInventory.getClients()) {
+        for (Client client : petInventory.getClient()) {
             System.out.println(client);
         }
     }
     
     //list task order
-    default ArrayList<TaskOrders> listTaskOrders(PetInventory petInventory){
-        //returns the vector that contains the task orders
-        return PetInventory.getTaskOrders();
+    default ArrayList<TaskOrder> listTaskOrders(PetInventory petInventory){
+        returns the vector that contains the task orders
+        return PetInventory.getTaskOrder();
     }
 
 }

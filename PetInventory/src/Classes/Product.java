@@ -13,6 +13,8 @@ public class Product {
         this.quantify = quantify;
         this.id = id;
     }
+    public Product(String name2, double price2, int quantify2, long id2) {
+    }
     /* getters e setters*/
     public String getName() {
         return name;
@@ -69,8 +71,5 @@ public class Product {
         if(!(obj instanceof Product))return false;
         Product prod = (Product) obj;
         return (prod.getId() == this.id);
-    }
-    
-    
-    
+    } 
 }

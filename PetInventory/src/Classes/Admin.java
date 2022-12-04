@@ -18,16 +18,16 @@ public class Admin extends User implements InterfaceSeller, InterfaceVet {
         //create a new purchase
         Purchase purchase = new Purchase(description, price);
         // make the purchase payment
-        purchase.buy();
+        purchase.pay();
         //add the purchase to the purchase vector
-        petInventory.getPurchases().add(purchase);
+        petInventory.getPurchase().add(purchase);
         //traverse the array of products
-        for(Product products : petInventory.getProducts()){
+        for(Product products : petInventory.getProduct()){
             // checks if the product added by reference is equal to some vector product
             if(products == product){ 
-                products.setQuantity(products.getQuantity() + quantity);
-                if(products.getQuantity() < 0){
-                    products.setQuantity(0);
+                products.setQuantify(products.getQuantify() + quantity);
+                if(products.getQuantify() < 0){
+                    products.setQuantify(0);
                 }
             }
         }
@@ -38,11 +38,11 @@ public class Admin extends User implements InterfaceSeller, InterfaceVet {
         //create a new vet using the data passed by reference
         Vet vet = new Vet(petInventory, name,  user, password, salary);
         //check if there is a user with this data
-        if(petInventory.getUsers().contains(vet)){
+        if(petInventory.getUser().contains(vet)){
             return false;
         }
         
-        petInventory.getUsers().add(vet);
+        petInventory.getUser().add(vet);
         return true;
     }
 
@@ -51,24 +51,24 @@ public class Admin extends User implements InterfaceSeller, InterfaceVet {
         //create a new seller using the data passed by reference
         Seller seller = new Seller(petInventory, name, user, password, salary);
        //check if there is a user with this data
-        if(petInventory.getUsers().contains(seller)){
+        if(petInventory.getUser().contains(seller)){
             return false;
         }
        
-        petInventory.getUsers().add(seller);
+        petInventory.getUser().add(seller);
         return true;
     }
 
     /*method that realizes register a product*/
-    public boolean registerProduct(String name, double price, int quantity, long id){
+    public boolean registerProduct(String name, double price, int quantify, long id){
         //create a new product using the data passed by reference
-        Product product = new Product(name, price, quantity, id);
+        Product product = new Product(name, price, quantify, id);
         //check if there is any product with this data
-        if(petInventory.getProducts().contains(product)){
+        if(petInventory.getProduct().contains(product)){
             return false;
         }
         
-        petInventory.getProducts().add(products);
+        petInventory.getProduct().add(product);
         return true;
     }
 
@@ -92,11 +92,11 @@ public class Admin extends User implements InterfaceSeller, InterfaceVet {
         //make the bill payment
         bill.pay();
         //checks the data to see if there is any bill with this data
-        if(petInventory.getBills().contains(bill)){
+        if(petInventory.getBill().contains(bill)){
             return false;
         }
     
-        petInventory.getBills().add(bill);
+        petInventory.getBill().add(bill);
         return true;
     }
 
@@ -107,35 +107,35 @@ public class Admin extends User implements InterfaceSeller, InterfaceVet {
         //make the purchase payment
         purchase.pay();
         //add to purchases vector
-        petInventory.getPurchases().add(purchase);
+        petInventory.getPurchase().add(purchase);
     }
 
     /*lists all employees registered in the system*/
     public void listEmployees(){
         //traverses the vector of users and lists the information
-        for (int i=0; i<this.petInventory.getUsers().size() -1; i++){
-            JOptionPane.showMessageDialog(null,"Employees" + this.petInventory.getUsers().get(i));
+        for (int i=0; i<this.petInventory.getUser().size() -1; i++){
+            JOptionPane.showMessageDialog(null,"Employees" + this.petInventory.getUser().get(i));
         }
     }
     
     /*lists the data*/
     public ArrayList<Bill> listBills(){
-        return this.petInventory.getBills();
+        return this.petInventory.getBill();
     }
     
     /*lists the data*/
     public ArrayList<Purchase> listPurchase(){
-        return this.petInventory.getPurchases();
+        return this.petInventory.getPurchase();
     }
     
     /*lists the data*/
     public ArrayList<Purchase> listSales(){
-        return this.petInventory.getSales();
+        return this.petInventory.getSale();
     }
 
     /*lists the data */
-    public ArrayList<OrderTask> listOrderTasks(){
-        return this.petInventory.getOrderTasks();
+    public ArrayList<TaskOrder> listOrderTask(){
+        return this.petInventory.getTaskOrder();
     }
 
 }

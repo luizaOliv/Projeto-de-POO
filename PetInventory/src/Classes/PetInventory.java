@@ -1,9 +1,10 @@
 package Classes;
 
-
 import java.util.ArrayList;
 import Screens.ScreenSellerMenu;
 import Screens.ScreenAdminMenu;
+import Screens.ScreenLogin;
+import Screens.ScreenRegisterClient;
 import Screens.ScreenVetMenu;
 import java.util.Stack;
 import javax.swing.JFrame;
@@ -20,9 +21,10 @@ public class PetInventory {
     private ArrayList<Task> tasks;
     private ArrayList<TaskOrder> taskOrder;
     private ArrayList<TaskOrder> taskhistory;
-    private ArrayList<Purchase> purchases;
     private ArrayList<Sale> sales;
+    private ArrayList<Purchase> purchases;
     private Stack<JFrame> screenHistory;
+    
 
     public PetInventory(String name) {
         this.name = name;
@@ -32,9 +34,9 @@ public class PetInventory {
         this.products = new ArrayList<>();
         this.tasks = new ArrayList<>();
         this.taskOrder = new ArrayList<>();
+        this.sale = new ArrayList<>();
         this.taskhistory = new ArrayList<>();
         this.purchases = new ArrayList<>();
-        this.sales = new ArrayList<>();
         this.screenHistory = new Stack<>();
     }
 
@@ -98,7 +100,7 @@ public class PetInventory {
         return taskhistory;
     }
 
-    public void setTaskOrder(ArrayList<OrdemServico> taskhistory) {
+    public void setTaskOrder(ArrayList<TaskOrder> taskhistory) {
         this.taskhistory = taskhistory;
     }
 
@@ -115,7 +117,7 @@ public class PetInventory {
     }
 
     public void setSale(ArrayList<Sale> sales) {
-        this.sales = sales;
+        this.sale = sales;
     }
 
     public User getCurrentLogin() {
