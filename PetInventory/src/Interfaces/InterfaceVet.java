@@ -41,7 +41,7 @@ public interface InterfaceVet {
 
      //method to list clients
      default void listClient(PetInventory petInventory) {
-        //traverses the vector that stores all clientes
+        //traverses the vector that stores all clients
         for (Client client : petInventory.getClients()) {
             System.out.println(client);
         }

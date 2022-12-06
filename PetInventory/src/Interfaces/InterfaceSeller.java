@@ -21,7 +21,7 @@ public interface InterfaceSeller {
             return null;
         }
         /*adding the customer in the Clients vector*/
-        petInventory.getClientes().add(client);
+        petInventory.getClients().add(client);
         return client;
     }
 
@@ -66,7 +66,7 @@ public interface InterfaceSeller {
     }
 
     /*method responsible for carrying out the sale of a given service*/
-    default void saleTask(PetShop petshop, Cliente cliente, Servico servico, Data dataServico) {
+    default void saleTask(PetInventory petInventory, Client client, Task task, Data dataTask) {
         int id = 0;
         //If the array is not empty, we move on to the next id
         if (!petInventory.getTaskOrder().isEmpty()) {

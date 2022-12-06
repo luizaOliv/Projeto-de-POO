@@ -7,13 +7,13 @@ public class User{
     /* attributes that will be used */
     protected PetInventory petInventory;
     protected String name;
-    protected RoleType role;
+    protected TypeRole role;
     protected String user;
     protected String password;
     protected double salary;
 
     /*class constructor*/
-    public User(PetInventory petInventory, String name, RoleType role, String user, String password, double salary) {
+    public User(PetInventory petInventory, String name, TypeRole role, String user, String password, double salary) {
         this.petInventory = petInventory;
         this.name = name;
         this.role = role;
@@ -27,7 +27,7 @@ public class User{
         return name;
     }
 
-    public RoleType getRole(){
+    public TypeRole getRole(){
         return role;
     }
 
@@ -48,7 +48,7 @@ public class User{
         this.name = name;
     }
 
-    public void setRole(RoleType role) {
+    public void setRole(TypeRole role) {
         this.role = role;
     }
     
