@@ -1,10 +1,6 @@
 package Classes;
 
 import Interfaces.InterfaceSeller;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import javax.swing.JOptionPane;
 
 /*creating the seller class and making it inherit data from the user class*/
 

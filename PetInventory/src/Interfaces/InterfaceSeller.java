@@ -1,7 +1,6 @@
 package Interfaces;
 
 import Classes.Client;
-import Classes.Purchase;
 import Classes.Data;
 import Classes.TaskOrder;
 import Classes.PetInventory;
@@ -14,14 +13,14 @@ public interface InterfaceSeller {
     /**Register a customer by adding him to the pet Inventory vector.
      * @return Sucess: Client. failure: null.
      */
-    default Client registerClient(PetInventory petInventory, String name, String typeAnimal, String petName, String address, int phone, int cpf) {
+    default Client registerClient(PetInventory petInventory, String name, String typeAnimal, String petName, String address, long phone, long cpf) {
         /*creating a new customer according to the information passed by reference*/
         Client client = new Client(name, typeAnimal, petName, address, phone, cpf);
-        if (petInventory.getClients().contains(client)) {
+        if (petInventory.getClient().contains(client)) {
             return null;
         }
         /*adding the customer in the Clients vector*/
-        petInventory.getClients().add(client);
+        petInventory.getClient().add(client);
         return client;
     }
 
@@ -29,8 +28,8 @@ public interface InterfaceSeller {
      * Search for a product already registered
      * @return Sucess: Product. failure: null.
      */
-    default product searchProduct(PetInventory petInventory, int id) {
-        for (Product products : petInventory.getProducts()) {
+    default Product searchProduct(PetInventory petInventory, int id) {
+        for (Product products : petInventory.getProduct()) {
             if (products.getId() == id) {
                 return products;
             } 
@@ -41,7 +40,7 @@ public interface InterfaceSeller {
     /*make the list of products*/
     default void listProduct(PetInventory petInventory) {
         /*travel through the product vector and then prints*/
-        for (Product products : petInventory.getProducts()) {
+        for (Product products : petInventory.getProduct()) {
             System.out.println(products.toString());
         }
     }
@@ -67,7 +66,7 @@ public interface InterfaceSeller {
 
     /*method responsible for carrying out the sale of a given service*/
     default void saleTask(PetInventory petInventory, Client client, Task task, Data dataTask) {
-        int id = 0;
+        long id = 0;
         //If the array is not empty, we move on to the next id
         if (!petInventory.getTaskOrder().isEmpty()) {
             id = petInventory.getTaskOrder().get(petInventory.getTaskOrder().size() - 1).getId() + 1;
@@ -82,15 +81,15 @@ public interface InterfaceSeller {
     default void saleProduct(PetInventory petInventory, Client client, ArrayList<Product> shoppingBag) {
 
         String saleDescription = "";
-        double preco = 0.0;
+        double price = 0.0;
         //scroll through the product list
-        for (product product : shoppingBag) {
+        for (Product product : shoppingBag) {
             saleDescription += product.getQuantify() + "x " + product.getName() + " (R$ " + product.getPrice() + " each)";
             if (product.getId() != shoppingBag.get(shoppingBag.size() - 1).getId()) {
                 saleDescription += ", ";
             }
 
-            price += product.getPrice() * product.getQuantify();
+           price += product.getPrice() * product.getQuantify();
             //make the sale happen
             for (Product productInventory : petInventory.getProduct()) {
                 if (product.equals(productInventory)) {
@@ -102,16 +101,16 @@ public interface InterfaceSeller {
             }
         }
         //create a new purchase with the information above
-        Purchase sale = new Purchase(descriptionPurchase, price);
+        Purchase sale = new Purchase(description, price);
         //make the payment
         sale.pay();
         //add sale in petInventory sales vector
-        petInventory.getSales().add(sale);
+        petInventory.getSale().add(sale);
         //check if the client exists
-        for (Client clients : petInventory.getClients()) {
+        for (Client clients : petInventory.getClient()) {
             if (client.equals(clients)) {
-                client.getPurchases().add(sale);
+               client.getPurchase().add(sale);
             }
-        }
+        //}
     }
 }

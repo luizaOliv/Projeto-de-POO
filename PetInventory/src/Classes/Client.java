@@ -1,7 +1,6 @@
 package Classes;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Client {
@@ -25,13 +24,13 @@ public class Client {
         this.purchases = new ArrayList<>();
     }
     /*Client Builder*/
-    public Client(String name, String typeAnimal, String petName, String address, int phone, int cpf) {
+    public Client(String name, String typeAnimal, String petName, String address, long phone2, long cpf2) {
         this.name = name;
         this.typeAnimal = typeAnimal;
         this.petName = petName;
         this.address = address;
-        this.phone = phone;
-        this.cpf = cpf;
+        this.phone = (int) phone2;
+        this.cpf = (int) cpf2;
         this.purchases = new ArrayList<>();
     }            
     // getters and setters
